@@ -1,0 +1,257 @@
+#!/usr/bin/perl -w
+use strict;
+use Data::Dumper;
+
+#
+# !!
+# !! This script is functional
+# !! This script is not nice!
+# !! This script needs writing after some thought has been given to the problem
+# !!
+#
+
+# point to the UM lib dir
+use lib qw {
+        ../lib
+};
+
+# use the required UM module(s)
+use UglyMUG::Log::Admin;
+use UglyMUG::Player::Email;
+
+# variables
+my ($log_admin, $player_email, $main_menu, $menu_message, $changes);
+
+$changes = 0;
+
+# create a new instance of UglyMUG::Log::Admin
+$log_admin = UglyMUG::Log::Admin->new(
+	'admin_info'	=> '../data/admin.info',
+	'email_list'	=> '../data/email.list',
+	'auto_write'	=> 0,
+	'create_new'	=> 1,
+);
+
+$player_email = UglyMUG::Player::Email->new(
+	'list'			=> '../data/email.list',
+	'cache'			=> 1,
+);
+
+
+# create a main_menu
+$main_menu = [
+	{
+		'text'			=> 'Modify A Player',
+		'call'			=> 'player_modify',
+		'changeflag'	=> 0,
+	},
+
+	{
+		'text'			=> 'Remove A Player',
+		'call'			=> 'player_remove',
+		'changeflag'	=> 0,
+	},
+
+	{
+		'text'			=> 'Add A Player',
+		'call'			=> 'player_add',
+		'changeflag'	=> 0,
+	},
+
+	{
+		'text'			=> 'Save Changes',
+		'call'			=> 'save_changes',
+		'changeflag'	=> 1,
+	},
+	
+	{
+		'text'			=> 'Exit',
+		'call'			=> 'quit',
+		'changeflag'	=> 0,
+	}
+];
+
+
+sub menu () {
+	my $count = 0;
+	my $user_input;
+
+	print "UglyMUG Log Recipient Configuration\n\n";
+
+	for (@$main_menu) {
+		$count++;
+		printf "[%3d] ", $count;
+
+		print $_->{'text'};
+		if (exists $_->{'changeflag'} and $_->{'changeflag'} and $changes) {
+			print ' [recommended]';
+		};
+		print "\n";
+	}
+
+	print "\n$menu_message\n"	if $menu_message;
+	print "\nWhat would you like to do? ";
+
+	undef($menu_message);			# clear errors
+	chomp ($user_input = <STDIN>);
+
+	# if the menu input is valid try to call the corresponding function
+	if (validate_menu_input($user_input)) {
+		nth_menu_item($user_input);
+	}
+}
+
+sub nth_menu_item($) {
+	my $n = shift;
+	my ($i, $item);
+
+	for ($i=0; $i<$n; $i++) {
+		$item = @{$main_menu}[$i];
+	}
+
+	no strict 'refs';
+	&{ $item->{call} };
+	use strict 'refs';
+}
+
+sub validate_menu_input($) {
+	my ($input) = shift;
+
+	# is the input an integer?
+	if ($input !~ /^[0-9]+$/) {
+		$menu_message = "!! You must enter a number !!";
+		return undef;
+	}
+
+	1;
+}
+
+sub quit() {
+	print "\n\nbye!\n";
+	exit;
+}
+
+sub list_player_menu() {
+	my ($players);
+
+	# get a list of players
+	$players = $log_admin->player_list;
+	
+	# print a menu
+	for (@$players) {
+		printf "[%5d] %s\n", $_, $player_email->get_player_name($_);
+	}
+}
+
+sub list_player_prefs($) {
+	my ($player) = @_;
+	my ($logs, $count);
+
+	$logs = $log_admin->valid_log_names;
+	$count = 0;
+
+	printf "\n[Preferences: %s(#%d)]\n",
+		$player_email->get_player_name($player),
+		$player;
+	
+	for (@$logs) {
+		$count++;
+		printf "[%3d] %-25s %s\n",
+			$count,
+			"$_:",
+			$log_admin->wants($player, $_) ? 'Yes' : 'No';
+	}
+}
+
+sub toggle_by_number($$) {
+	my ($player, $number) = @_;
+	my ($logs);
+
+	$logs = $log_admin->valid_log_names;
+
+	if ($number =~ /^[0-9]+$/ and $number <= @$logs) {
+		$log_admin->set_preference(
+			$player,
+			@{$logs}[$number-1],
+			not $log_admin->wants($player, @{$logs}[$number-1]));
+		$changes++;
+	}
+	else {
+		$menu_message = "$number: Out Of Range: only @{[scalar @$logs]} options\n";
+	}
+}
+
+sub player_modify() {
+	my ($user_input);
+
+	print "\n\nModify Player Settings\n\n";
+	list_player_menu();
+
+	print "\n$menu_message\n"	if $menu_message;
+	print "\n\nModify which player? ";
+
+	chomp ($user_input = <STDIN>);
+
+	if ($log_admin->in_list($user_input)) {
+		while ( 1 ) {
+			list_player_prefs($user_input);
+
+			print "\n$menu_message\n"	if $menu_message;
+			print "Enter number and press <Enter> to toggle. Q to quit this menu. ";
+			undef ($menu_message);
+			my $field_num;
+			chomp ($field_num = <STDIN>);
+
+			return if ($field_num =~ /^[qQ]$/);
+			toggle_by_number($user_input, $field_num);
+		}
+	}
+	else {
+		$menu_message = "$user_input: unknown player\n";
+	}
+}
+
+sub player_remove() {
+	print "\n\nRemove Player Settings\n";
+	list_player_menu;
+
+	print "\n$menu_message\n"	if $menu_message;
+	print "\n\nRemove which player? ";
+	
+	my $id = <STDIN>;
+	chomp $id;
+
+	if ($id =~ /^[0-9]+$/) {
+		$log_admin->remove_player($id);
+		$changes++;
+	}
+	else {
+		$menu_message = " !! Use numbers please !!\n";
+	}
+}
+
+sub player_add() {
+	print "\n\nAdd Player Settings\n";
+
+	print "\n#ID of player to add? ";
+	my $id = <STDIN>;
+	chomp $id;
+
+	if ($id =~ /^[0-9]+$/) {
+		$log_admin->add_player($id);
+		$changes++;
+	}
+	else {
+		$menu_message = " !! Use numbers please !!\n";
+	}
+}
+
+sub save_changes() {
+	$log_admin->store_data;
+	$changes = 0;
+}
+
+# display the menu - repeatedly
+while ( 1 ) {
+	menu;
+}

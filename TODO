@@ -1,0 +1,57 @@
+This file is a list if ideas and things to do:
+
+1.	option for players to receive all logs destined for them in one email
+	with the logs as attachments
+
+2.	a module to report which admin require which logs
+	this module should also provide an interface to modify these options
+	[DONE]
+
+3.	email the logs out
+	admin-logs should have all the recipients in a bcc
+	[DONE]
+
+4.	bounce tracking
+	we should use an email address that parses all it's input
+	so we can count email addresses that fail, and bounce back to us
+
+5.	'pass-through' handler?
+	should we have an option for ACCEPT to be handled by the CONNECT handler?
+
+6.	NPC #ids
+	Do they know their own ids? Do they always?
+	[No Longer Relevant]
+
+7.	UglyMUG::Log::Handler::Unexpected
+	We should never throw information away, so allow processing of
+	entries which don't fit the expected log format.
+	[DONE]
+
+8.  NOHUHLOGS
+	We should change the email dump routine in the game to dump the value of this
+	flag for each player, and should NOT send logs to players with this set.
+	[DONE]
+
+9.	Log Errors
+	We could write errors from the log-generation process to <root>/admin/day/logging
+	and then send it using the same methods as other admin logs.
+	We might need to prevent modules from reporting errors when sending this log.
+
+10. If we have a module in $self->{'_modules'}{$some_ref}, can we pass this
+	to other modules, and use this instead of creating a new instance of the module?
+	[DONE]
+
+11.	scat
+	Make sure it works!
+	[DONE]
+
+12.	DISCONNECT
+	I suspect we are passing a message through - check this, and remove it?
+
+13.	Bad/Missing Email Addresses
+	Is there some way we can store a log for future sending if we didn't
+	send the log becuase the player had a bad or missing email address?
+	Perhaps a method to send them after we know the player has a valid
+	email address, and remove them after X days if they don't get sent?
+	Possibly send copies of unsent logs to admin people?
+

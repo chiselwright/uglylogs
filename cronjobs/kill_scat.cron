@@ -1,0 +1,8 @@
+# this should be added to the cron for user "uglymug"
+# you'll need to change the path to the script
+# I'd recommend setting the MAILTO variable for the
+# user, if you don't already
+
+# MIN HOUR DAY MONTH DAYOFWEEK   COMMAND
+# at 3:00am every day
+0 3 * * * /home/chisel/Development/SourceForge/UglyLogs/cronjobs/kill_scat.sh

@@ -1,0 +1,28 @@
+$Name: ul_1_002 $
+
+Tag file.
+
+Lists the tags and the broad changes made.  Please update everytime a new
+release goes live on the main game. This way we can always pull out the correct
+version. In reverse order.  Leave the Name: tag at the top of the file to get
+the correct release tag embedded in the game when you build it.
+
+Addendum: As you commit code, please put information about the changes in above
+the latest release tag. That way if someone else does a release, the change
+information doesn't get lost.
+
+	altered UglyMUG::Log::Admin to be aware of the new boot log
+	added BOOT handler
+	added RECONNECT handler
+	added player-specific hack reports; still retained the admin hack log containing
+	everything
+	changed subject lines for outgoing logs - player logs now have "Player" in the subject
+
+ul_1_001
+	fixed cron scripts to work properly in the live environment
+	removed timestamp checks from scripts
+	added crontabs directory with scripts and cronjob-information
+	added Compress::Zlib to the UglyMUG bundle
+
+ul_1_000
+	this is the first stable release of the UglyMUG Log processing system

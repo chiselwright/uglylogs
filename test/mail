@@ -1,0 +1,26 @@
+#!/usr/bin/perl -w
+use strict;
+use Data::Dumper;
+
+
+# point to the UM lib dir
+use lib qw {
+	/home/chisel/Development/UglyMUG/UglyLogs/lib
+};
+
+# globals
+my ($msg, $mail);
+
+# use the required UM module(s)
+use UglyMUG::Mail;
+
+local $/ = undef;		# enable slurp mode
+$msg = <STDIN>;
+
+# new instance of UglyMUG::Mail;
+$mail = UglyMUG::Mail->new(
+	'bounce_info'	=> '/tmp/bounce.info',
+	'message'		=> $msg,
+);
+
+warn $mail->get_player_id;

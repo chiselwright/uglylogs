@@ -1,0 +1,86 @@
+#!/usr/bin/perl -w
+use strict;
+use Data::Dumper;
+
+# point to the UM lib dir
+use lib qw {
+        /home/chisel/Development/UglyMUG/UglyLogs/lib
+};
+
+# use the required UM module(s)
+use UglyMUG::Log::Admin;
+
+# variables
+my ($log_admin);
+
+# create a new instance of UglyMUG::Log::Admin
+$log_admin = UglyMUG::Log::Admin->new(
+	'admin_info'	=> '/home/chisel/Development/UglyMUG/data/admin.info',
+	'email_list'	=> '/home/chisel/Development/UglyMUG/data/email.list',
+	'auto_write'	=> 1,
+	'create_new'	=> 1,
+);
+
+# try to set a preference for a player not in the list
+$log_admin->set_preference(0, 'bug', 1);		# not a player, can't be in the list - I hope
+
+# only try to add players if they aren't in the list
+for (qw{ 1 42 9285 10000 20364 24235 36298 43877 44575 45268 47059 49664 54317 }) {
+	if (not $log_admin->in_list($_)) {
+		print "Adding #$_ with default settings\n";
+		$log_admin->add_player($_);
+	}
+}
+
+# does God (#1) want hack logs?
+print "#1 ", $log_admin->wants(1, 'hack') ? 'wants' : 'will cope without', " a hack log\n";
+
+
+
+
+# who wants hack logs?
+my $hack_recipients = $log_admin->wants_log('hack');
+print "The following players want hack logs: ", join(', ', map( "#$_", @$hack_recipients)), "\n";
+
+# what would a To: line look like for the hack log?
+my $to = $log_admin->build_recipient_string($hack_recipients);
+print "To: $to\n";
+
+
+
+
+# who wants connect logs?
+$hack_recipients = $log_admin->wants_log('connect');
+print "The following players want connect logs: ", join(', ', map( "#$_", @$hack_recipients)), "\n";
+
+# what would a To: line look like for the connect log?
+$to = $log_admin->build_recipient_string($hack_recipients);
+print "To: $to\n";
+
+
+
+
+
+# set Chisel so that he sees connect logs
+$log_admin->set_preference(24235, 'connect', 1);
+
+# who wants connect logs?
+$hack_recipients = $log_admin->wants_log('connect');
+print "The following players want connect logs: ", join(', ', map( "#$_", @$hack_recipients)), "\n";
+
+# what would a To: line look like for the connect log?
+$to = $log_admin->build_recipient_string($hack_recipients);
+print "To: $to\n";
+
+# set Chisel so that he doesn't see connect logs (this keeps the results from the test the same)
+$log_admin->set_preference(24235, 'connect', 0);
+
+
+
+
+# remove a player from the list
+$log_admin->remove_player(10000);
+
+
+# do a tsv dump of the information
+$log_admin->tsv_dump('/tmp/admin.tsv');

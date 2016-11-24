@@ -1,0 +1,46 @@
+UglyLOGs
+
+Take a look at test/log-send-test-mail. This is probably almost exactly what is
+required to parse, process, and email player and admin logs.
+
+You'll need to change the paths in the script - it's unlikely your set-up will
+match mine exactly.
+
+Also, if you don't cahnge the test_mail_to address, I will hunt you down and fill
+your shoes with cold custard. I don't want your test emails. Thanks for the offer.
+
+
+
+== DATA ==
+
+I've removed all data from admin.info and email.list that don't relate to me.
+It would be very bad of me to publish a whole bunch of details like that
+for anyone to help themselves to.
+
+I've left my details in as an example of the format. I assume you have a suitable
+user base that you can use instead of this.
+
+If you wish to change admin.info:
+
+ bash# cd bin
+ bash# ./log_recipient_config
+
+I'll admit it's hacky, and doesn't handle everything as well as it should,
+but it is a working CLI to change the settings.
+
+
+
+
+== Perl Modules / CPAN ==
+
+As the 'appropriate' user (probably root):
+
+ bash# cp lib/Bundle/UglyMUG.pm ~/.cpan/Bundle/
+
+You should then be able to run cpan and
+
+ cpan> install Bundle::UglyMUG
+
+Chisel (20 Feb 2002)
+
+$Id: README,v 1.1.1.1 2002/02/20 12:30:43 chiselwright Exp $

@@ -1,0 +1,1007 @@
+[UglyCODE Release TESTCODE build #339 by chisel at Mon Feb 18 14:32:31 GMT 2002]
+LOADING1014042868db/ugly.db.currentSTART
+GENERAL1014042868Beta(tagged) Database DUMP format recognised.
+DEBUG1014042875compound_command parse 1: #12325
+DEBUG1014042875compound_command parse 2: top
+DEBUG1014042875compound_command parse 3: @drop {@?id} = {@?time}
+DEBUG1014042875compound_command parse 1: :raises his hands into the air, mutters a few incoherent words, and...
+DEBUG1014042875compound_command parse 2: @tel #13155
+DEBUG1014042875compound_command parse 3: arrive
+DEBUG1014042875compound_command parse 1: :{@?desc #54013[{@eval {@?rand {@?size #54013}} + 1}]}
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty fieldarrive
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty fieldtop
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty field.logout
+BUG1014042875context returned a restart request to the scheduler
+DEBUG1014042875compound_command parse 1: @chpid
+DEBUG1014042875compound_command parse 2: @if {@?exist me:flaming torch}
+DEBUG1014042875set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 3: @remote #55465=drop flaming torch
+DEBUG1014042875if_scope parse line 4: @endif
+DEBUG1014042875set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014042875set_parse_helper: line 2 = 0x 404 (1028)
+DEBUG1014042875compound_command parse 5: @tel #13155
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty field.logout
+DEBUG1014042875compound_command parse 1: :has disconnected.
+DEBUG1014042875compound_command parse 2: #12325
+DEBUG1014042875compound_command parse 3: @true
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty field.logout
+DEBUG1014042875compound_command parse 1: @chpid
+DEBUG1014042875compound_command parse 2: @if {@eval {@?size #40563} = 100}
+DEBUG1014042875set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 3: @dest #40563[1]
+DEBUG1014042875if_scope parse line 4: @endif
+DEBUG1014042875set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014042875set_parse_helper: line 2 = 0x 404 (1028)
+DEBUG1014042875compound_command parse 5: @describe #40563[] = %z%c{@?isodate} {@?isotime} %y{@?name me}%z
+DEBUG1014042875compound_command parse 6: @unchpid
+DEBUG1014042875compound_command parse 7: @true
+DEBUG1014042875if: currentline: @dest #40563[1]
+DEBUG1014042875compound_command parse 1: @rem Returns ISO8601 format date given a UNIX time argument (default: now)
+DEBUG1014042875compound_command parse 2: @local tstring={@?realtime $1}
+DEBUG1014042875compound_command parse 3: @local year = {@eval nitem 5 " " "$tstring"}
+DEBUG1014042875compound_command parse 4: @local month={@?monthnum {@eval nitem 2 " " "$tstring"}}
+DEBUG1014042875compound_command parse 5: @if {@eval $month < 10 }
+DEBUG1014042875set_parse_helper: line 5 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 6: @local month = 0$month
+DEBUG1014042875if_scope parse line 7: @endif
+DEBUG1014042875set_parse_helper: line 5 = 0x   7 (7)
+DEBUG1014042875set_parse_helper: line 5 = 0x 707 (1799)
+DEBUG1014042875compound_command parse 8: @local day={@eval nitem 3 " " "$tstring"}
+DEBUG1014042875compound_command parse 9: @if {@eval $day < 10 }
+DEBUG1014042875set_parse_helper: line 9 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 10: @local day = 0$day
+DEBUG1014042875if_scope parse line 11: @endif
+DEBUG1014042875set_parse_helper: line 9 = 0x   b (11)
+DEBUG1014042875set_parse_helper: line 9 = 0x b0b (2827)
+DEBUG1014042875compound_command parse 12: @return true = ${year}-${month}-${day}
+DEBUG1014042875compound_command parse 1: @local offset = 0
+DEBUG1014042875compound_command parse 2: @if {@eval "" = $1}
+DEBUG1014042875set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 3: @if {@?exist me:UGLYMUG GAME INFO[timediff]}
+DEBUG1014042875set_parse_helper: line 3 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 4: @local offset = {@?desc me:UGLYMUG GAME INFO[timediff]}
+DEBUG1014042875if_scope parse line 5: @endif
+DEBUG1014042875set_parse_helper: line 3 = 0x   5 (5)
+DEBUG1014042875set_parse_helper: line 3 = 0x 505 (1285)
+DEBUG1014042875if_scope parse line 6: @return true = {||@?realtime {@eval ${offset} * 3600 + {@?time}}}
+DEBUG1014042875if_scope parse line 7: @endif
+DEBUG1014042875set_parse_helper: line 2 = 0x   7 (7)
+DEBUG1014042875set_parse_helper: line 2 = 0x 707 (1799)
+DEBUG1014042875compound_command parse 8: @return true = {||@?realtime $3}
+DEBUG1014042875if: currentline: @if {@?exist me:UGLYMUG GAME INFO[timediff]}
+DEBUG1014042875if: currentline: @local offset = {@?desc me:UGLYMUG GAME INFO[timediff]}
+DEBUG1014042875if: currentline: @return true = {||@?realtime {@eval ${offset} * 3600 + {@?time}}}
+COMMAND101404287524235El Em En Omally12696spangle13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042875compound_command parse 1: @chpid
+DEBUG1014042875compound_command parse 2: @if {@?exist #29015[$1]}
+DEBUG1014042875set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042875if_scope parse line 3: @return true = {@?descr #29015[$1]}
+DEBUG1014042875if_scope parse line 4: @else
+DEBUG1014042875set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014042875if_scope parse line 5: @return false = Invalid month $1 (must be Jan-Dec)
+DEBUG1014042875if_scope parse line 6: @endif
+DEBUG1014042875set_parse_helper: line 4 = 0x   6 (6)
+DEBUG1014042875set_parse_helper: line 2 = 0x 604 (1540)
+DEBUG1014042875compound_command parse 7: @unchpid
+DEBUG1014042875if: currentline: @return true = {@?descr #29015[$1]}
+COMMAND101404287524235El Em En Omally12696spangle13155A misty field@?monthnum
+DEBUG1014042875if: currentline: @local month = 0$month
+COMMAND101404287524235El Em En Omally12696spangle13155A misty field@?isodate
+DEBUG1014042875compound_command parse 1: @rem Returns ISO8601 format time given a UNIX time argument (default: now)
+DEBUG1014042875compound_command parse 2: @return true = {@eval nitem 4 " " "{@?realtime $1}"}
+DEBUG1014042875if: currentline: @if {@?exist me:UGLYMUG GAME INFO[timediff]}
+DEBUG1014042875if: currentline: @local offset = {@?desc me:UGLYMUG GAME INFO[timediff]}
+DEBUG1014042875if: currentline: @return true = {||@?realtime {@eval ${offset} * 3600 + {@?time}}}
+COMMAND101404287524235El Em En Omally12696spangle13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+COMMAND101404287524235El Em En Omally12696spangle13155A misty field@?isotime
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty fieldRecently_On_Logger
+DEBUG1014042875compound_command parse 1: @chpid
+DEBUG1014042875compound_command parse 2: @echo Logging out...
+DEBUG1014042875compound_command parse 3: @?exist me:mylastoffthingy
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty fieldstorelastoff
+DEBUG1014042875compound_command parse 1: @chpid
+DEBUG1014042875compound_command parse 2: @desc me:UGLYMUG GAME INFO[Last Off] = {@?time}
+DEBUG1014042875compound_command parse 3: @unchpid
+COMMAND101404287524235El Em En Omally24235El Em En Omally13155A misty fieldreally store lo
+LOADING1014042875db/ugly.db.currentDONE
+ACCEPT1014042875432777127.0.0.1
+BUG1014042875file not found: motd.txt
+CONNECT1014042881SUCCESS124235El Em En Omally
+DEBUG1014042881compound_command parse 1: tn
+DEBUG1014042881compound_command parse 2: chat #buffy
+DEBUG1014042881compound_command parse 3: chat #build
+DEBUG1014042881compound_command parse 4: chat #linux
+DEBUG1014042881compound_command parse 5: chat #perl
+DEBUG1014042881compound_command parse 6: @rem title {@?description me:.WhoStrings[{@eval ({@?rand {@?size me:.WhoStrings}} + 1)}]}
+DEBUG1014042881compound_command parse 7: CheckFriends
+DEBUG1014042881compound_command parse 1: @set me=!tracing
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldtn
+DEBUG1014042881compound_command parse 1: dofeeling ||chat = $3
+DEBUG1014042881compound_command parse 1: @if {@eval length \$2 < 2}
+DEBUG1014042881set_parse_helper: line 1 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 2: $1 $2
+DEBUG1014042881if_scope parse line 3: @elseif {@eval ((nchar 1 \$2) == ".") && ((nchar 2 \$2) != ".")}
+DEBUG1014042881set_parse_helper: line 1 = 0x   3 (3)
+DEBUG1014042881if_scope parse line 4: $1 :{@?feel {@eval tail "." \$2}}
+DEBUG1014042881if_scope parse line 5: @else
+DEBUG1014042881set_parse_helper: line 3 = 0x   5 (5)
+DEBUG1014042881if_scope parse line 6: $1 $2
+DEBUG1014042881if_scope parse line 7: @endif
+DEBUG1014042881set_parse_helper: line 5 = 0x   7 (7)
+DEBUG1014042881set_parse_helper: line 1 = 0x 703 (1795)
+DEBUG1014042881if: currentline: @elseif {@eval ((nchar 1 \$2) == ".") && ((nchar 2 \$2) != ".")}
+DEBUG1014042881if: currentline: @else
+DEBUG1014042881if: currentline: $1 $2
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fielddofeeling
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldchat;#
+DEBUG1014042881if: currentline: @elseif {@eval ((nchar 1 \$2) == ".") && ((nchar 2 \$2) != ".")}
+DEBUG1014042881if: currentline: @else
+DEBUG1014042881if: currentline: $1 $2
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fielddofeeling
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldchat;#
+DEBUG1014042881if: currentline: @elseif {@eval ((nchar 1 \$2) == ".") && ((nchar 2 \$2) != ".")}
+DEBUG1014042881if: currentline: @else
+DEBUG1014042881if: currentline: $1 $2
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fielddofeeling
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldchat;#
+DEBUG1014042881if: currentline: @elseif {@eval ((nchar 1 \$2) == ".") && ((nchar 2 \$2) != ".")}
+DEBUG1014042881if: currentline: @else
+DEBUG1014042881if: currentline: $1 $2
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fielddofeeling
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldchat;#
+DEBUG1014042881compound_command parse 1: @if {@eval {@?exist me:FriendCheck} == "Error"}
+DEBUG1014042881set_parse_helper: line 1 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 2: @echo You don't appear to have any friends.
+DEBUG1014042881if_scope parse line 3: @return False = BillyNoMates
+DEBUG1014042881if_scope parse line 4: @endif
+DEBUG1014042881set_parse_helper: line 1 = 0x   4 (4)
+DEBUG1014042881set_parse_helper: line 1 = 0x 404 (1028)
+DEBUG1014042881compound_command parse 5: @chpid
+DEBUG1014042881compound_command parse 6: @recursionlimit 1500
+DEBUG1014042881compound_command parse 7: @with me:FriendCheck=index, id
+DEBUG1014042881with_loop parse: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881set_parse_helper: line 8 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 9: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+DEBUG1014042881if_scope parse line 10: @else
+DEBUG1014042881set_parse_helper: line 8 = 0x   a (10)
+DEBUG1014042881if_scope parse line 11: @local Connected = %zConnected\ \ \ : %gYes%z \ \ \ For\ \ \ \ \ \ \ \ \ : {@?shortinterval {@eval {@?time} - {@?fail *$id}}} (Idle: {@?shortinterval {@?idletime *$id}})
+DEBUG1014042881if_scope parse line 12: @endif
+DEBUG1014042881set_parse_helper: line 10 = 0x   c (12)
+DEBUG1014042881set_parse_helper: line 8 = 0x c0a (3082)
+DEBUG1014042881with_loop parse: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881with_loop parse: @end
+DEBUG1014042881set_parse_helper: line 7 = 0x   e (14)
+DEBUG1014042881compound_command parse 15: @unchpid
+DEBUG1014042881loop: currentline: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881if: currentline: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042881loop: currentline: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881compound_command parse 1: @local String = {@eval nitem 1 ";" "$3"}
+DEBUG1014042881compound_command parse 2: @local PadTo = {@eval nitem 2 ";" "$3"}
+DEBUG1014042881compound_command parse 3: @if {@eval ("$String" == "") || ("$PadTo" == ""))
+DEBUG1014042881set_parse_helper: line 3 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 4: @return FALSE
+DEBUG1014042881if_scope parse line 5: @endif
+DEBUG1014042881set_parse_helper: line 3 = 0x   5 (5)
+DEBUG1014042881set_parse_helper: line 3 = 0x 505 (1285)
+DEBUG1014042881compound_command parse 6: @if {@eval (length "$String") > $PadTo}
+DEBUG1014042881set_parse_helper: line 6 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 7: @return FALSE=$String
+DEBUG1014042881if_scope parse line 8: @endif
+DEBUG1014042881set_parse_helper: line 6 = 0x   8 (8)
+DEBUG1014042881set_parse_helper: line 6 = 0x 808 (2056)
+DEBUG1014042881compound_command parse 9: @local Length = {@eval (length "$String") - $PadTo}
+DEBUG1014042881compound_command parse 10: @local Padding=#!~#
+DEBUG1014042881compound_command parse 11: @for i=1 to $Length
+DEBUG1014042881for_loop parse: @local Padding = #!~#$Padding
+DEBUG1014042881for_loop parse: @end
+DEBUG1014042881set_parse_helper: line 11 = 0x   d (13)
+DEBUG1014042881compound_command parse 14: @local Padding="{@eval Replace all #!~# " " "$Padding"}"
+DEBUG1014042881compound_command parse 15: @return TRUE=$String{@eval midstring 2 ((length $Padding) - 2) $Padding}
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?padding;@?pad
+DEBUG1014042881loop: currentline: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881if: currentline: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042881loop: currentline: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?padding;@?pad
+DEBUG1014042881loop: currentline: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881if: currentline: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042881loop: currentline: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?padding;@?pad
+DEBUG1014042881loop: currentline: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881if: currentline: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042881loop: currentline: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?padding;@?pad
+DEBUG1014042881loop: currentline: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881if: currentline: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042881loop: currentline: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?padding;@?pad
+DEBUG1014042881loop: currentline: @if {@eval {@?connected *$id} == "Error"}
+DEBUG1014042881if: currentline: @local Connected = %zConnected\ \ \ : %rNo%z\ \ \ \ \ Last On\ \ \ \ \ : %y{@?realtime {@?fail *$id}}%z.
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?realtime;@?rea;@?real;@?realt;@?realti;@?realtim
+DEBUG1014042881loop: currentline: @echo {@?padding {@?name $id};30} $Connected
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+DEBUG1014042881loop: currentline: @local Padding = #!~#$Padding
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field@?padding;@?pad
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldCheckFriends;cf;whof
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty field.login
+DEBUG1014042881compound_command parse 1: set wrap = off
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldSet Wrap Off;SWO
+DEBUG1014042881compound_command parse 1: @rem
+DEBUG1014042881compound_command parse 2: @rem --- System Tasks: Check and update dictionaries; register Admin for Assist.
+DEBUG1014042881compound_command parse 3: @rem
+DEBUG1014042881compound_command parse 4: check.for.game.info
+DEBUG1014042881compound_command parse 5: first_login?
+DEBUG1014042881compound_command parse 6: #12320
+DEBUG1014042881compound_command parse 7: @chpid
+DEBUG1014042881compound_command parse 8: @if {@?exist me:_{@?id}_bbsinfo}
+DEBUG1014042881set_parse_helper: line 8 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 9: @desc me:_{@?id}_bbsinfo[Last]=1
+DEBUG1014042881if_scope parse line 10: @endif
+DEBUG1014042881set_parse_helper: line 8 = 0x   a (10)
+DEBUG1014042881set_parse_helper: line 8 = 0x a0a (2570)
+DEBUG1014042881compound_command parse 11: #55335
+DEBUG1014042881compound_command parse 12: @rem
+DEBUG1014042881compound_command parse 13: @rem --- Player Tasks: Check on News; Mail and Ansafone; check Chat and FChat settings.
+DEBUG1014042881compound_command parse 14: @rem
+DEBUG1014042881compound_command parse 15: #41452
+DEBUG1014042881compound_command parse 16: @unchpid
+DEBUG1014042881compound_command parse 17: |look
+DEBUG1014042881compound_command parse 18: ansafone check
+DEBUG1014042881compound_command parse 19: ums.quiet_newstest
+DEBUG1014042881compound_command parse 20: quiet_mailcheck
+DEBUG1014042881compound_command parse 21: :has connected
+DEBUG1014042881compound_command parse 1: @chpid
+DEBUG1014042881compound_command parse 2: @?exist me:UGLYMUG GAME INFO
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldcheck.for.game.info
+DEBUG1014042881compound_command parse 1: @test {@?exist me:UGLYMUG GAME INFO[firston]}
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldfirst_login?
+DEBUG1014042881if: currentline: @desc me:_{@?id}_bbsinfo[Last]=1
+DEBUG1014042881compound_command parse 1: @rem Run from top .login - check and reset player's ashcan flag
+DEBUG1014042881compound_command parse 2: @if {@?set me = ashcan}
+DEBUG1014042881set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 3: @chpid
+DEBUG1014042881if_scope parse line 4: @echo %rWarning:%z Your character has not been used for some time and is scheduled for deletion soon. Now that you have logged on, we know you want to keep your character after all - so tell a wizard and ask them to 'un-ashcan' you. They'll know what you mean ;)
+DEBUG1014042881if_scope parse line 5: @unchpid
+DEBUG1014042881if_scope parse line 6: @endif
+DEBUG1014042881set_parse_helper: line 2 = 0x   6 (6)
+DEBUG1014042881set_parse_helper: line 2 = 0x 606 (1542)
+COMMAND101404288124235El Em En Omally12696spangle13155A misty fieldashcan_check
+DEBUG1014042881compound_command parse 1: @chpid
+DEBUG1014042881compound_command parse 2: @if {@eval "{@?exist me:UGLYMUG GAME INFO[nochat]}" == "Error"}
+DEBUG1014042881set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 3: @unchpid
+DEBUG1014042881if_scope parse line 4: cc
+DEBUG1014042881if_scope parse line 5: @chpid
+DEBUG1014042881if_scope parse line 6: @elseif {@?set me = welcomer}
+DEBUG1014042881set_parse_helper: line 2 = 0x   6 (6)
+DEBUG1014042881if_scope parse line 7: @unchpid
+DEBUG1014042881if_scope parse line 8: cc
+DEBUG1014042881if_scope parse line 9: @chpid
+DEBUG1014042881if_scope parse line 10: @endif
+DEBUG1014042881set_parse_helper: line 6 = 0x   a (10)
+DEBUG1014042881set_parse_helper: line 2 = 0x a06 (2566)
+DEBUG1014042881compound_command parse 11: @if {@?exist me:UGLYMUG GAME INFO[TCZ Chat]}
+DEBUG1014042881set_parse_helper: line 11 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 12: @unchpid
+DEBUG1014042881if_scope parse line 13: chat #TCZ
+DEBUG1014042881if_scope parse line 14: @endif
+DEBUG1014042881set_parse_helper: line 11 = 0x   e (14)
+DEBUG1014042881set_parse_helper: line 11 = 0x e0e (3598)
+DEBUG1014042881compound_command parse 15: @unchpid
+DEBUG1014042881if: currentline: @elseif {@?set me = welcomer}
+DEBUG1014042881if: currentline: @unchpid
+DEBUG1014042881if: currentline: cc
+DEBUG1014042881compound_command parse 1: @if {@eval \$1 == "off"}
+DEBUG1014042881set_parse_helper: line 1 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 2: cc :has left the channel for something better.
+DEBUG1014042881if_scope parse line 3: @channel leave = #chat
+DEBUG1014042881if_scope parse line 4: @chpid
+DEBUG1014042881if_scope parse line 5: @descr me:UGLYMUG GAME INFO[nochat] = never
+DEBUG1014042881if_scope parse line 6: @unchpid
+DEBUG1014042881if_scope parse line 7: @return t = Left
+DEBUG1014042881if_scope parse line 8: @endif
+DEBUG1014042881set_parse_helper: line 1 = 0x   8 (8)
+DEBUG1014042881set_parse_helper: line 1 = 0x 808 (2056)
+DEBUG1014042881compound_command parse 9: @if {@eval \$1 == "on"}
+DEBUG1014042881set_parse_helper: line 9 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 10: @chpid
+DEBUG1014042881if_scope parse line 11: #18497 #chat
+DEBUG1014042881if_scope parse line 12: @if {@eval "{@?exist me:UGLYMUG GAME INFO[nochat]}" == "OK"}
+DEBUG1014042881set_parse_helper: line 12 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 13: @dest me:UGLYMUG GAME INFO[nochat]
+DEBUG1014042881if_scope parse line 14: @endif
+DEBUG1014042881set_parse_helper: line 12 = 0x   e (14)
+DEBUG1014042881set_parse_helper: line 12 = 0x e0e (3598)
+DEBUG1014042881if_scope parse line 15: @echo {@?descr {@?myself}:Rules}
+DEBUG1014042881if_scope parse line 16: @unchpid
+DEBUG1014042881if_scope parse line 17: @return t = Joined
+DEBUG1014042881if_scope parse line 18: @endif
+DEBUG1014042881set_parse_helper: line 9 = 0x  12 (18)
+DEBUG1014042881set_parse_helper: line 9 = 0x1212 (4626)
+DEBUG1014042881compound_command parse 19: @if {@eval \$3 == "who"}
+DEBUG1014042881set_parse_helper: line 19 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 20: cwho
+DEBUG1014042881if_scope parse line 21: @return t = Listed
+DEBUG1014042881if_scope parse line 22: @endif
+DEBUG1014042881set_parse_helper: line 19 = 0x  16 (22)
+DEBUG1014042881set_parse_helper: line 19 = 0x1616 (5654)
+DEBUG1014042881compound_command parse 23: @if {@eval \$3 == "swho"}
+DEBUG1014042881set_parse_helper: line 23 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 24: @channel who
+DEBUG1014042881if_scope parse line 25: @return t= Listed
+DEBUG1014042881if_scope parse line 26: @endif
+DEBUG1014042881set_parse_helper: line 23 = 0x  1a (26)
+DEBUG1014042881set_parse_helper: line 23 = 0x1a1a (6682)
+DEBUG1014042881compound_command parse 27: @if {@eval \$3 == "rules"}
+DEBUG1014042881set_parse_helper: line 27 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 28: @chpid
+DEBUG1014042881if_scope parse line 29: @echo {@?descr {@?myself}:Rules}
+DEBUG1014042881if_scope parse line 30: @unchpid
+DEBUG1014042881if_scope parse line 31: @return t = Shown
+DEBUG1014042881if_scope parse line 32: @endif
+DEBUG1014042881set_parse_helper: line 27 = 0x  20 (32)
+DEBUG1014042881set_parse_helper: line 27 = 0x2020 (8224)
+DEBUG1014042881compound_command parse 33: @if {@eval \$3 != ""}
+DEBUG1014042881set_parse_helper: line 33 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 34: @rem This looks nasty, but has the same effect. Because dofeeling can't take a '=' as part of the <command>, we cheat.
+DEBUG1014042881if_scope parse line 35: chat #chat
+DEBUG1014042881if_scope parse line 36: dofeeling chat = $3
+DEBUG1014042881if_scope parse line 37: @return t=Ok
+DEBUG1014042881if_scope parse line 38: @else
+DEBUG1014042881set_parse_helper: line 33 = 0x  26 (38)
+DEBUG1014042881if_scope parse line 39: @echo {@?descr {@?myself}:Rules}
+DEBUG1014042881if_scope parse line 40: chat #chat
+DEBUG1014042881if_scope parse line 41: @endif
+DEBUG1014042881set_parse_helper: line 38 = 0x  29 (41)
+DEBUG1014042881set_parse_helper: line 33 = 0x2926 (10534)
+DEBUG1014042881if: currentline: @else
+DEBUG1014042881if: currentline: @echo {@?descr {@?myself}:Rules}
+DEBUG1014042881if: currentline: chat #chat
+DEBUG1014042881if: currentline: @elseif {@eval ((nchar 1 \$2) == ".") && ((nchar 2 \$2) != ".")}
+DEBUG1014042881if: currentline: @else
+DEBUG1014042881if: currentline: $1 $2
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fielddofeeling
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldchat;#
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldcc
+DEBUG1014042881if: currentline: @chpid
+COMMAND101404288124235El Em En Omally24235El Em En Omally13155A misty fieldchat_signup
+DEBUG1014042881compound_command parse 1: @chpid
+DEBUG1014042881compound_command parse 2: @if {@eval "$1" == "clear"}
+DEBUG1014042881set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 3: #29074
+DEBUG1014042881if_scope parse line 4: @return true = Cleared
+DEBUG1014042881if_scope parse line 5: @endif
+DEBUG1014042881set_parse_helper: line 2 = 0x   5 (5)
+DEBUG1014042881set_parse_helper: line 2 = 0x 505 (1285)
+DEBUG1014042881compound_command parse 6: @if {@?exist me:ansafone_array}
+DEBUG1014042881set_parse_helper: line 6 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 7: @if {@eval "$1" == "check"}
+DEBUG1014042881set_parse_helper: line 7 = 0x   0 (0)
+DEBUG1014042881if_scope parse line 8: @echo You have Ansafone messages (type 'ansafone').
+DEBUG1014042881if_scope parse line 9: @return true = Checked.
+DEBUG1014042881if_scope parse line 10: @endif
+DEBUG1014042882set_parse_helper: line 7 = 0x   a (10)
+DEBUG1014042882set_parse_helper: line 7 = 0x a0a (2570)
+DEBUG1014042882if_scope parse line 11: @echo %g{@?name me}'s%z ansafone messages:
+DEBUG1014042882if_scope parse line 12: @echo ------------------
+DEBUG1014042882if_scope parse line 13: @with me:ansafone_array=index, element
+DEBUG1014042882with_loop parse: @echo [$index] $element
+DEBUG1014042882with_loop parse: @end
+DEBUG1014042882set_parse_helper: line 13 = 0x   f (15)
+DEBUG1014042882if_scope parse line 16: @echo -- End of messages (type 'ansafone clear' to erase)
+DEBUG1014042882if_scope parse line 17: @elseif {@eval \$1 != "check"}
+DEBUG1014042882set_parse_helper: line 6 = 0x  11 (17)
+DEBUG1014042882if_scope parse line 18: @rem
+DEBUG1014042882if_scope parse line 19: @echo You have no Ansafone messages.
+DEBUG1014042882if_scope parse line 20: @rem
+DEBUG1014042882if_scope parse line 21: @endif
+DEBUG1014042882set_parse_helper: line 17 = 0x  15 (21)
+DEBUG1014042882set_parse_helper: line 6 = 0x1511 (5393)
+DEBUG1014042882compound_command parse 22: @unchpid
+DEBUG1014042882if: currentline: @if {@eval "$1" == "check"}
+DEBUG1014042882if: currentline: @echo You have Ansafone messages (type 'ansafone').
+DEBUG1014042882if: currentline: @return true = Checked.
+COMMAND101404288224235El Em En Omally12696spangle13155A misty fieldansafone;ansaphone;answerphone;answerfone;fone
+DEBUG1014042882compound_command parse 1: @chpid
+DEBUG1014042882compound_command parse 2: @if {@?exist me:_{@?id}_bbsinfo}
+DEBUG1014042882set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 3: @local most_recent_news_id = {@eval nitem 8 ; "{@?descr #15642[{@?size #15642}]}"}
+DEBUG1014042882if_scope parse line 4: @local last_read_id = {@?descr me:_{@?id}_bbsinfo[News]}
+DEBUG1014042882if_scope parse line 5: @if {@eval $most_recent_news_id > $last_read_id}
+DEBUG1014042882set_parse_helper: line 5 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 6: @echo There is new news (type 'news' to read it).
+DEBUG1014042882if_scope parse line 7: @endif
+DEBUG1014042882set_parse_helper: line 5 = 0x   7 (7)
+DEBUG1014042882set_parse_helper: line 5 = 0x 707 (1799)
+DEBUG1014042882if_scope parse line 8: @endif
+DEBUG1014042882set_parse_helper: line 2 = 0x   8 (8)
+DEBUG1014042882set_parse_helper: line 2 = 0x 808 (2056)
+DEBUG1014042882compound_command parse 9: @chpid
+DEBUG1014042882if: currentline: @local most_recent_news_id = {@eval nitem 8 ; "{@?descr #15642[{@?size #15642}]}"}
+DEBUG1014042882if: currentline: @local last_read_id = {@?descr me:_{@?id}_bbsinfo[News]}
+DEBUG1014042882if: currentline: @if {@eval $most_recent_news_id > $last_read_id}
+DEBUG1014042882if: currentline: @echo There is new news (type 'news' to read it).
+COMMAND101404288224235El Em En Omally12696spangle13155A misty fieldums.quiet_newstest
+DEBUG1014042882compound_command parse 1: @if {@?exist me:um.opt}
+DEBUG1014042882set_parse_helper: line 1 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 2: @if {@eval {@?descr me:um.opt[unread]} > 0 }
+DEBUG1014042882set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 3: xmail .login
+DEBUG1014042882if_scope parse line 4: @endif
+DEBUG1014042882set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014042882set_parse_helper: line 2 = 0x 404 (1028)
+DEBUG1014042882if_scope parse line 5: @endif
+DEBUG1014042882set_parse_helper: line 1 = 0x   5 (5)
+DEBUG1014042882set_parse_helper: line 1 = 0x 505 (1285)
+DEBUG1014042882if: currentline: @if {@eval {@?descr me:um.opt[unread]} > 0 }
+DEBUG1014042882if: currentline: xmail .login
+DEBUG1014042882compound_command parse 1: @chpid
+DEBUG1014042882compound_command parse 2: @if {@?exist me:um_dic}
+DEBUG1014042882set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 3: #6860
+DEBUG1014042882if_scope parse line 4: @endif
+DEBUG1014042882set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014042882set_parse_helper: line 2 = 0x 404 (1028)
+DEBUG1014042882compound_command parse 5: @if {@eval "$1" == ""}
+DEBUG1014042882set_parse_helper: line 5 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 6: #49647
+DEBUG1014042882if_scope parse line 7: @endif
+DEBUG1014042882set_parse_helper: line 5 = 0x   7 (7)
+DEBUG1014042882set_parse_helper: line 5 = 0x 707 (1799)
+DEBUG1014042882compound_command parse 8: @if {@?exist #5231[$1]}
+DEBUG1014042882set_parse_helper: line 8 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 9: ${#5231[$1]} $2
+DEBUG1014042882if_scope parse line 10: @endif
+DEBUG1014042882set_parse_helper: line 8 = 0x   a (10)
+DEBUG1014042882set_parse_helper: line 8 = 0x a0a (2570)
+DEBUG1014042882compound_command parse 11: @if {@eval ("{@?exist #5231[$1]}" != "OK") && ("$1" != "")}
+DEBUG1014042882set_parse_helper: line 11 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 12: #6813 $1=$2
+DEBUG1014042882if_scope parse line 13: @endif
+DEBUG1014042882set_parse_helper: line 11 = 0x   d (13)
+DEBUG1014042882set_parse_helper: line 11 = 0x d0d (3341)
+DEBUG1014042882if: currentline: ${#5231[$1]} $2
+DEBUG1014042882compound_command parse 1: @chpid
+DEBUG1014042882compound_command parse 2: @if {@?exist me:um.opt}
+DEBUG1014042882set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 3: @true
+DEBUG1014042882if_scope parse line 4: @else
+DEBUG1014042882set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014042882if_scope parse line 5: @false
+DEBUG1014042882if_scope parse line 6: @endif
+DEBUG1014042882set_parse_helper: line 4 = 0x   6 (6)
+DEBUG1014042882set_parse_helper: line 2 = 0x 604 (1540)
+DEBUG1014042882if: currentline: @true
+COMMAND101404288224235El Em En Omally8763Postman Pat13155A misty fieldcheck
+DEBUG1014042882compound_command parse 1: @chpid
+DEBUG1014042882compound_command parse 2: @global total={@?size me:um.hdr}
+DEBUG1014042882compound_command parse 3: @global unread={@?descr me:um.opt[unread]}
+DEBUG1014042882compound_command parse 4: @if {@test {@eval $total = 0}}
+DEBUG1014042882set_parse_helper: line 4 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 5: @echo $1 %z%cYou have %h%yno mail%z%c.%z
+DEBUG1014042882if_scope parse line 6: @endif
+DEBUG1014042882set_parse_helper: line 4 = 0x   6 (6)
+DEBUG1014042882set_parse_helper: line 4 = 0x 606 (1542)
+DEBUG1014042882compound_command parse 7: @if {@eval ($total == 1) && ($unread = 0)}
+DEBUG1014042882set_parse_helper: line 7 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 8: @echo $1 %z%cYou have %h%yone%z%c item of mail (%h%yNo new mail%z%c).%z
+DEBUG1014042882if_scope parse line 9: @endif
+DEBUG1014042882set_parse_helper: line 7 = 0x   9 (9)
+DEBUG1014042882set_parse_helper: line 7 = 0x 909 (2313)
+DEBUG1014042882compound_command parse 10: @if {@eval ($total == 1) && ($unread = 1)}
+DEBUG1014042882set_parse_helper: line 10 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 11: @echo $1 %z%cYou have %h%yone%z%c item of mail (%h%yOne unread%z%c).%z
+DEBUG1014042882if_scope parse line 12: @endif
+DEBUG1014042882set_parse_helper: line 10 = 0x   c (12)
+DEBUG1014042882set_parse_helper: line 10 = 0x c0c (3084)
+DEBUG1014042882compound_command parse 13: @if {@eval ($total > 1) && ($unread = 0)}
+DEBUG1014042882set_parse_helper: line 13 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 14: @echo $1 %z%cYou have %h%y$total%z%c items of mail (%h%yNo new mail%z%c).%z
+DEBUG1014042882if_scope parse line 15: @endif
+DEBUG1014042882set_parse_helper: line 13 = 0x   f (15)
+DEBUG1014042882set_parse_helper: line 13 = 0x f0f (3855)
+DEBUG1014042882compound_command parse 16: @if {@eval ($total > 1) && ($unread = 1)}
+DEBUG1014042882set_parse_helper: line 16 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 17: @echo $1 %z%cYou have %h%y$total%z%c items of mail (%h%yOne unread%z%c).%z
+DEBUG1014042882if_scope parse line 18: @endif
+DEBUG1014042882set_parse_helper: line 16 = 0x  12 (18)
+DEBUG1014042882set_parse_helper: line 16 = 0x1212 (4626)
+DEBUG1014042882compound_command parse 19: @if {@eval ($total > 1) && ($unread > 1)}
+DEBUG1014042882set_parse_helper: line 19 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 20: @echo $1 %z%cYou have %h%y$total%z%c items of mail (%h%y$unread unread%z%c).%z
+DEBUG1014042882if_scope parse line 21: @endif
+DEBUG1014042882set_parse_helper: line 19 = 0x  15 (21)
+DEBUG1014042882set_parse_helper: line 19 = 0x1515 (5397)
+DEBUG1014042882compound_command parse 22: @if {@eval $total = ${me:um.opt[limit]}}
+DEBUG1014042882set_parse_helper: line 22 = 0x   0 (0)
+DEBUG1014042882if_scope parse line 23: @echo %rWarning: Your mailbox is full. You need to clear out some mail before anyone can send you more messages. Type 'help mail' to find out how to do this.%z
+DEBUG1014042882if_scope parse line 24: @endif
+DEBUG1014042882set_parse_helper: line 22 = 0x  18 (24)
+DEBUG1014042882set_parse_helper: line 22 = 0x1818 (6168)
+DEBUG1014042882if: currentline: @echo $1 %z%cYou have %h%y$total%z%c items of mail (%h%y$unread unread%z%c).%z
+COMMAND101404288224235El Em En Omally8763Postman Pat13155A misty fieldcheck.exist
+COMMAND101404288224235El Em En Omally8763Postman Pat13155A misty fieldxmail;mail
+COMMAND101404288224235El Em En Omally24235El Em En Omally13155A misty fieldquiet_mailcheck
+COMMAND101404288224235El Em En Omally24235El Em En Omally13155A misty field.login
+COMMAND101404288253092Mr Benn53092Mr Benn47776%d%yThe Land Beyond.myoutput [El Em En Omally[0m has connected]
+DEBUG1014042882compound_command parse 1: @true
+COMMAND101404288253092Mr Benn53092Mr Benn47776%d%yThe Land Beyond.myoutput
+COMMAND101404288524235El Em En Omally24235El Em En Omally13155A misty fieldgripe test
+GRIPE101404288524235El Em En Omally13155A misty fieldtest
+COMMAND101404289024235El Em En Omally24235El Em En Omally13155A misty fieldgripe gripe
+GRIPE101404289024235El Em En Omally13155A misty fieldgripe
+COMMAND101404289524235El Em En Omally24235El Em En Omally13155A misty fieldgripe gripe gripe
+GRIPE101404289524235El Em En Omally13155A misty fieldgripe gripe
+DEBUG1014042937compound_command parse 1: @with here:shuttles = shuttle_id, info
+DEBUG1014042937with_loop parse: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042937with_loop parse: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042937with_loop parse: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042937with_loop parse: @desc ${destin}:timer = {@?time}
+DEBUG1014042937with_loop parse: @tele $exitin = $destin
+DEBUG1014042937with_loop parse: @link $exitout = $destin
+DEBUG1014042937with_loop parse: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014042937with_loop parse: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014042937with_loop parse: @end
+DEBUG1014042937set_parse_helper: line 1 = 0x   a (10)
+DEBUG1014042937compound_command parse 11: @csucc here:shuttle_alarm = shuttles_leave
+DEBUG1014042937compound_command parse 12: @desc here:shuttle_alarm = + 30 0 0 0
+DEBUG1014042937loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042937loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042937loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042937loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014042937loop: currentline: @tele $exitin = $destin
+DEBUG1014042937loop: currentline: @link $exitout = $destin
+DEBUG1014042937loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014042937loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014042937loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042937loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042937loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042937loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014042937loop: currentline: @tele $exitin = $destin
+DEBUG1014042937loop: currentline: @link $exitout = $destin
+DEBUG1014042937loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014042937loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014042937loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042937loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042937loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042937loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014042937loop: currentline: @tele $exitin = $destin
+DEBUG1014042937loop: currentline: @link $exitout = $destin
+DEBUG1014042937loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014042937loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+BUG1014042937attempt to remove element from list that didn't contain it: candidate is #4921
+COMMAND10140429373321B5Group3321B5Group42243Core Shuttle Systemshuttles_arrive
+DEBUG1014042937compound_command parse 1: @oemote {@?desc #18315[{@eval {@?rand {@?size #18315}} + 1}]}
+COMMAND101404293718294Seeth18294Seeth1580Hideoutscact
+DEBUG1014042969compound_command parse 1: @with here:shuttles = shuttle_id, info
+DEBUG1014042969with_loop parse: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042969with_loop parse: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042969with_loop parse: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042969with_loop parse: @unlink $exitout
+DEBUG1014042969with_loop parse: @tele $exitin = #49611
+DEBUG1014042969with_loop parse: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014042969with_loop parse: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014042969with_loop parse: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014042969with_loop parse: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014042969with_loop parse: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014042969with_loop parse: @end
+DEBUG1014042969set_parse_helper: line 1 = 0x   c (12)
+DEBUG1014042969compound_command parse 13: @csucc here:shuttle_alarm = shuttles_arrive
+DEBUG1014042969compound_command parse 14: @desc here:shuttle_alarm = + 0 1 0 0
+DEBUG1014042969loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042969loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042969loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042969loop: currentline: @unlink $exitout
+DEBUG1014042969loop: currentline: @tele $exitin = #49611
+DEBUG1014042969loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014042969loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014042969loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014042969loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014042969loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014042969loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042969loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042969loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042969loop: currentline: @unlink $exitout
+DEBUG1014042969loop: currentline: @tele $exitin = #49611
+DEBUG1014042969loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014042969loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014042969loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014042969loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014042969loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014042969loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014042969loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014042969loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014042969loop: currentline: @unlink $exitout
+DEBUG1014042969loop: currentline: @tele $exitin = #49611
+DEBUG1014042969loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014042969loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014042969loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014042969loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014042969loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+COMMAND10140429693321B5Group3321B5Group42243Core Shuttle Systemshuttles_leave
+COMMAND101404299918294Seeth18294Seeth1580Hideoutscact
+DEBUG1014043031loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043031loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043031loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043031loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043031loop: currentline: @tele $exitin = $destin
+DEBUG1014043031loop: currentline: @link $exitout = $destin
+DEBUG1014043031loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043031loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043031loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043031loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043031loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043031loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043031loop: currentline: @tele $exitin = $destin
+DEBUG1014043031loop: currentline: @link $exitout = $destin
+DEBUG1014043031loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043031loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043031loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043031loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043031loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043031loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043031loop: currentline: @tele $exitin = $destin
+DEBUG1014043031loop: currentline: @link $exitout = $destin
+DEBUG1014043031loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043031loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+COMMAND10140430313321B5Group3321B5Group42243Core Shuttle Systemshuttles_arrive
+DEBUG1014043057compound_command parse 1: @chpid
+DEBUG1014043057compound_command parse 2: @remote #4200 = ;{@?desc #41450:SnowVar{@?rand 12}}
+COMMAND101404305737101Nova_Is_My_Mum37101Nova_Is_My_Mum4200Icelandia Top Area Room - External' here.SnowOnMeBaby
+COMMAND101404306118294Seeth18294Seeth1580Hideoutscact
+DEBUG1014043063loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043063loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043063loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043063loop: currentline: @unlink $exitout
+DEBUG1014043063loop: currentline: @tele $exitin = #49611
+DEBUG1014043063loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043063loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043063loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043063loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043063loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043063loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043063loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043063loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043063loop: currentline: @unlink $exitout
+DEBUG1014043063loop: currentline: @tele $exitin = #49611
+DEBUG1014043063loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043063loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043063loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043063loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043063loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043063loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043063loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043063loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043063loop: currentline: @unlink $exitout
+DEBUG1014043063loop: currentline: @tele $exitin = #49611
+DEBUG1014043063loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043063loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043063loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043063loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043063loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+COMMAND10140430633321B5Group3321B5Group42243Core Shuttle Systemshuttles_leave
+DEBUG1014043107compound_command parse 1: @desc #14329[]={@?who me}
+DEBUG1014043107compound_command parse 2: @dest #14329[1]
+DEBUG1014043107compound_command parse 3: @who me = {@?descr #14329[1]}
+COMMAND101404310743877Mutley Brandybuck43877Mutley Brandybuck9098Mutley's Back Gardenwho_swap
+COMMAND101404312318294Seeth18294Seeth1580Hideoutscact
+DEBUG1014043125loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043125loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043125loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043125loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043125loop: currentline: @tele $exitin = $destin
+DEBUG1014043125loop: currentline: @link $exitout = $destin
+DEBUG1014043125loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043125loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043125loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043125loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043125loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043125loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043125loop: currentline: @tele $exitin = $destin
+DEBUG1014043125loop: currentline: @link $exitout = $destin
+DEBUG1014043125loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043125loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043125loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043125loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043125loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043125loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043125loop: currentline: @tele $exitin = $destin
+DEBUG1014043125loop: currentline: @link $exitout = $destin
+DEBUG1014043125loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043125loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+COMMAND10140431253321B5Group3321B5Group42243Core Shuttle Systemshuttles_arrive
+DEBUG1014043157loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043157loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043157loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043157loop: currentline: @unlink $exitout
+DEBUG1014043157loop: currentline: @tele $exitin = #49611
+DEBUG1014043157loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043157loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043157loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043157loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043157loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043157loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043157loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043157loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043157loop: currentline: @unlink $exitout
+DEBUG1014043157loop: currentline: @tele $exitin = #49611
+DEBUG1014043157loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043157loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043157loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043157loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043157loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043157loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043157loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043157loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043157loop: currentline: @unlink $exitout
+DEBUG1014043157loop: currentline: @tele $exitin = #49611
+DEBUG1014043157loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043157loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043157loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043157loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043157loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+COMMAND10140431573321B5Group3321B5Group42243Core Shuttle Systemshuttles_leave
+COMMAND101404318518294Seeth18294Seeth1580Hideoutscact
+DEBUG1014043219loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043219loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043219loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043219loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043219loop: currentline: @tele $exitin = $destin
+DEBUG1014043219loop: currentline: @link $exitout = $destin
+DEBUG1014043219loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043219loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043219loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043219loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043219loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043219loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043219loop: currentline: @tele $exitin = $destin
+DEBUG1014043219loop: currentline: @link $exitout = $destin
+DEBUG1014043219loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043219loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043219loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043219loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043219loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043219loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043219loop: currentline: @tele $exitin = $destin
+DEBUG1014043219loop: currentline: @link $exitout = $destin
+DEBUG1014043219loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043219loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+COMMAND10140432193321B5Group3321B5Group42243Core Shuttle Systemshuttles_arrive
+COMMAND101404323937101Nova_Is_My_Mum37101Nova_Is_My_Mum4200Icelandia Top Area Room - External' here.SnowOnMeBaby
+COMMAND101404324718294Seeth18294Seeth1580Hideoutscact
+DEBUG1014043251loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043251loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043251loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043251loop: currentline: @unlink $exitout
+DEBUG1014043251loop: currentline: @tele $exitin = #49611
+DEBUG1014043251loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043251loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043251loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043251loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043251loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043251loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043251loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043251loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043251loop: currentline: @unlink $exitout
+DEBUG1014043251loop: currentline: @tele $exitin = #49611
+DEBUG1014043251loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043251loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043251loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043251loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043251loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043251loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043251loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043251loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043251loop: currentline: @unlink $exitout
+DEBUG1014043251loop: currentline: @tele $exitin = #49611
+DEBUG1014043251loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043251loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043251loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043251loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043251loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+COMMAND10140432513321B5Group3321B5Group42243Core Shuttle Systemshuttles_leave
+DEBUG1014043267compound_command parse 1: @chpid
+DEBUG1014043267compound_command parse 2: @if {@eval {@?size #24107} = 0 }
+DEBUG1014043267set_parse_helper: line 2 = 0x   0 (0)
+DEBUG1014043267if_scope parse line 3: @return t=blah
+DEBUG1014043267if_scope parse line 4: @endif
+DEBUG1014043267set_parse_helper: line 2 = 0x   4 (4)
+DEBUG1014043267set_parse_helper: line 2 = 0x 404 (1028)
+DEBUG1014043267compound_command parse 5: @chpid
+DEBUG1014043267compound_command parse 6: @recursionlimit 500
+DEBUG1014043267compound_command parse 7: @with #24107=id, dict
+DEBUG1014043267with_loop parse: @desc ${dict}[]=${${dict}[1]}
+DEBUG1014043267with_loop parse: @who $id=${${dict}[1]}
+DEBUG1014043267with_loop parse: @dest ${dict}[1]
+DEBUG1014043267with_loop parse: @end
+DEBUG1014043267set_parse_helper: line 7 = 0x   b (11)
+DEBUG1014043267loop: currentline: @desc ${dict}[]=${${dict}[1]}
+DEBUG1014043267loop: currentline: @who $id=${${dict}[1]}
+DEBUG1014043267loop: currentline: @dest ${dict}[1]
+DEBUG1014043267loop: currentline: @desc ${dict}[]=${${dict}[1]}
+DEBUG1014043267loop: currentline: @who $id=${${dict}[1]}
+DEBUG1014043267loop: currentline: @dest ${dict}[1]
+DEBUG1014043267loop: currentline: @desc ${dict}[]=${${dict}[1]}
+DEBUG1014043267loop: currentline: @who $id=${${dict}[1]}
+DEBUG1014043267loop: currentline: @dest ${dict}[1]
+DEBUG1014043267loop: currentline: @desc ${dict}[]=${${dict}[1]}
+DEBUG1014043267loop: currentline: @who $id=${${dict}[1]}
+DEBUG1014043267loop: currentline: @dest ${dict}[1]
+COMMAND101404326724841Luggage24841Luggage24155The Whostrings Roomwho_swap
+COMMAND101404330918294Seeth18294Seeth1580Hideoutscact
+DEBUG1014043313loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043313loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043313loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043313loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043313loop: currentline: @tele $exitin = $destin
+DEBUG1014043313loop: currentline: @link $exitout = $destin
+DEBUG1014043313loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043313loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043313loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043313loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043313loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043313loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043313loop: currentline: @tele $exitin = $destin
+DEBUG1014043313loop: currentline: @link $exitout = $destin
+DEBUG1014043313loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043313loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+DEBUG1014043313loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043313loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043313loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043313loop: currentline: @desc ${destin}:timer = {@?time}
+DEBUG1014043313loop: currentline: @tele $exitin = $destin
+DEBUG1014043313loop: currentline: @link $exitout = $destin
+DEBUG1014043313loop: currentline: @remote $shuttle_id = ;%h%gThis shuttle has arrived in {@eval tail ":" \{@?name $destin}}.%z
+DEBUG1014043313loop: currentline: @remote {@?location $exitin} = ;%h%c{@?name $shuttle_id} has arrived.%z
+COMMAND10140433133321B5Group3321B5Group42243Core Shuttle Systemshuttles_arrive
+COMMAND101404333943877Mutley Brandybuck43877Mutley Brandybuck9098Mutley's Back Gardenwho_swap
+DEBUG1014043345loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043345loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043345loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043345loop: currentline: @unlink $exitout
+DEBUG1014043345loop: currentline: @tele $exitin = #49611
+DEBUG1014043345loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043345loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043345loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043345loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043345loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043345loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043345loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043345loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043345loop: currentline: @unlink $exitout
+DEBUG1014043345loop: currentline: @tele $exitin = #49611
+DEBUG1014043345loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043345loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043345loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043345loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043345loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+DEBUG1014043345loop: currentline: @global exitout = {@eval nitem 1 ";" "$info"}
+DEBUG1014043345loop: currentline: @global exitin = {@eval nitem 2 ";" "$info"}
+DEBUG1014043345loop: currentline: @global destin = {@eval nitem 3 ";" "$info"}
+DEBUG1014043345loop: currentline: @unlink $exitout
+DEBUG1014043345loop: currentline: @tele $exitin = #49611
+DEBUG1014043345loop: currentline: @desc ${destin}:timer = {@eval {@?time} + 360}
+DEBUG1014043345loop: currentline: @global destin = {@?descr here:destinations[$destin]}
+DEBUG1014043345loop: currentline: @remote {@eval nitem 3 ";" "$info"} = ;%h%c{@?name $shuttle_id} has left.%z
+DEBUG1014043345loop: currentline: @remote $shuttle_id = ;%h%rThe shuttle moves off.%z
+DEBUG1014043345loop: currentline: @desc here:shuttles[$shuttle_id] = $exitout;$exitin;$destin
+COMMAND10140433453321B5Group3321B5Group42243Core Shuttle Systemshuttles_leave
+COMMAND101404337118294Seeth18294Seeth1580Hideoutscact
+COMMAND101404340624235El Em En Omally24235El Em En Omally13155A misty field@shutdown
+SHUTDOWN101404340624235El Em En Omallyno apparent reason
+DUMP1014043406db/ugly.db.end.#1#START
+DUMP1014043408db/ugly.db.end.#1#DONE

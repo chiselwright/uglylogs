@@ -1,0 +1,55 @@
+#!/usr/bin/perl -w
+use strict;
+use Data::Dumper;
+
+# point to the UM lib dir
+use lib qw {
+        /home/chisel/Development/UglyMUG/UglyLogs/lib
+};
+
+# use the required UM module(s)
+use UglyMUG::Player::Email;
+
+# variables
+my ($player_email, $player_info);
+
+# create a new instance
+$player_email = UglyMUG::Player::Email->new (
+	'list'	=> '/home/chisel/Development/UglyMUG/data/email.list',
+	'cache'	=> 1,
+)
+or die "can't create new instance of UglyMUG::Player::Email";
+
+for (qw{1 24235 24841}) {
+	print "\n[ --- #$_ --- ]\n";
+
+	# search for a user by ID
+	print "\tSearching for #$_\n";
+	$player_info = $player_email->get_player_info($_);
+	print "\t", Dumper($player_info);
+
+	# get the player name
+	print "\tFetching name for #$_\n";
+	$player_info = $player_email->get_player_name($_);
+	print "\t\tName:    $player_info\n";
+
+	# get the player email
+	print "\tFetching e'mail for #$_\n";
+	$player_info = $player_email->get_player_email($_);
+	print "\t\tE'Mail:  $player_info\n";
+
+	# getting formatted e'mail address
+	print "\tFetching formatted e'mail for #$_\n";
+	$player_info = $player_email->get_formatted_email_address($_);
+	print "\t\tE'Mail:  $player_info\n";
+
+	# does the player what HUH logs?
+	print "\tGetting HUH information for #$_\n";
+	$player_info = $player_email->requires_huh($_);
+	print "\t\tHuh:     $player_info\n";
+
+	# get aliases
+	print "\tFetching aliases for #$_\n";
+	$player_info = $player_email->aliases($_);
+	print "\t\tAliases: ", join(', ', @$player_info), "\n";
+}

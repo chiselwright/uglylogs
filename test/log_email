@@ -1,0 +1,35 @@
+#!/usr/bin/perl -w
+use strict;
+use Data::Dumper;
+
+# point to the UM lib dir
+use lib qw {
+	/home/chisel/Development/UglyMUG/UglyLogs/lib
+};
+
+# use the required UM module(s)
+use UglyMUG::Log::Email;
+
+# variables
+my ($log_email);
+
+# create a new instance
+$log_email = UglyMUG::Log::Email->new (
+	'log_root'			=> '/home/chisel/Development/UglyMUG/data/logs',
+	'log_header_root'	=> '/home/chisel/Development/UglyMUG/data/logs/headers',
+
+	'email_list'		=> '/home/chisel/Development/UglyMUG/data/email.list',
+	'admin_info'		=> '/home/chisel/Development/UglyMUG/data/admin.info',
+
+	'log_from_address'	=> 'UglyMUG Logs <uglylogs@uglymug.org.uk>',
+
+	'test_mail_to'		=> 'Chisel Wright <chisel@herlpacker.co.uk>',
+	'test_print_mail'	=> 1,
+)
+	or die "can't create new instance of UglyMUG::Log";
+
+# send chisel his note log
+$log_email->send_player_log(24235, 'note');
+
+# send an admin log
+$log_email->send_admin_log('day', 'gripe');
